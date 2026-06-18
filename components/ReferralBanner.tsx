@@ -4,7 +4,7 @@ function ReferralBanner () {
 
     return(
         <Link
-        href="/referral-program"
+        href="/public/referral-program"
         className="
           block
           border-y

@@ -53,7 +53,7 @@ export default function Pricing() {
 
     useEffect(() => {
         loadUser()
-        console.log(user)
+        // console.log(user)
     }, []);
 
     const loadUser = async () => {
@@ -63,7 +63,7 @@ export default function Pricing() {
             const data = await response.json();
 
             if (data.authenticated) {
-                console.log(data.user)
+                // console.log(data.user)
                 setUser({ ...data.user });
                 return data.user
             } else {

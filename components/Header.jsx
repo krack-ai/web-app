@@ -14,7 +14,7 @@ export default function NavBar() {
   const router = useRouter();
 useEffect(() => {
     loadUser()
-    console.log(user)
+    // console.log(user)
 }, []);
 
 const loadUser = async () => {
@@ -24,7 +24,7 @@ const loadUser = async () => {
       const data = await response.json();
   
       if (data.authenticated) {
-        console.log(data.user)
+        // console.log(data.user)
         setUser({...data.user});
       } else {
         setUser(null);
@@ -42,8 +42,8 @@ const loadUser = async () => {
   
       setUser(null);
       setShowProfileMenu(false);
-  
-      router.push("/");
+      setOpen(false)
+      router.push("/public");
       router.refresh();
     } catch (error) {
       console.error(error);
@@ -55,9 +55,8 @@ const loadUser = async () => {
       <div className="max-w-7xl mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
 
         {/* Logo */}
-        <div className="flex items-center gap-3 cursor-pointer" onClick={() => {
-            router.push('/')
-        }}>
+        <Link href={'/public'} >
+        <div className="flex items-center gap-3 cursor-pointer">
           <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-pink-500 to-orange-300 flex items-center justify-center text-white font-bold text-2xl">
             K
           </div>
@@ -66,18 +65,19 @@ const loadUser = async () => {
             Krack-AI
           </h1>
         </div>
+        </Link>
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center gap-10 text-slate-600">
-        <span className="cursor-pointer" onClick={() => router.push('/#features')}>Features</span>
-            <span className="cursor-pointer" onClick={() => router.push('/#reviews')}>Reviews</span>
-            <span className="cursor-pointer" onClick={() => router.push('/#privacy')}>Privacy</span>
-            <span className="cursor-pointer" onClick={() => router.push('/#pricing')}>Pricing</span>
+        <span className="cursor-pointer" onClick={() => router.push('/public/#features')}>Features</span>
+            <span className="cursor-pointer" onClick={() => router.push('/public/#reviews')}>Reviews</span>
+            <span className="cursor-pointer" onClick={() => router.push('/public/#privacy')}>Privacy</span>
+            <span className="cursor-pointer" onClick={() => router.push('/public/#pricing')}>Pricing</span>
             <span className="cursor-pointer" onClick={() => {
-                router.push('/referral-program')
+                router.push('/public/referral-program')
                 }}>Referral Program</span>
 
-          <Link className="cursor-pointer" href="/download">Download</Link>
+          <Link className="cursor-pointer" href="/public/download">Download</Link>
 
 
         </nav>
@@ -112,7 +112,6 @@ const loadUser = async () => {
       <div className="absolute right-0 top-14 bg-white shadow-lg rounded-xl border w-48">
         <button
           onClick={() => {
-            console.log("kkkkkk")
             setShowProfileMenu(false);
             router.push("/profile");
           }}
@@ -163,27 +162,27 @@ const loadUser = async () => {
           <div className="flex flex-col p-4 gap-4">
 
             <span onClick={() => {
-                router.push('/#features')
+                router.push('/public/#features')
                 setOpen(false)
                 }}>Features</span>
             <span onClick={() => {
-                router.push('/#reviews')
+                router.push('/public/#reviews')
                 setOpen(false)
                 }}>Reviews</span>
             <span onClick={() => {
-                router.push('/#privacy')
+                router.push('/public/#privacy')
                 setOpen(false)
                 }}>Privacy</span>
             <span onClick={() => {
-                router.push('/#pricing')
+                router.push('/public/#pricing')
                 setOpen(false)
                 }}>Pricing</span>
             <span onClick={() => {
-                router.push('/download')
+                router.push('/public/download')
                 setOpen(false)
                 }}>Download</span>
             <span onClick={() => {
-                router.push('/referral-program')
+                router.push('/public/referral-program')
                 setOpen(false)
                 }}>Referral Program</span>
 
@@ -194,15 +193,17 @@ const loadUser = async () => {
                 <span
             onClick={() => {
                 setShowProfileMenu(false);
-                router.push("/profile");
+                router.push("/public/profile");
                 setOpen(false)
               }}>Profile</span>
             <span onClick={handleLogout}>Logout</span>
                 </>
             ) : (
   <button
-    onClick={() =>
+    onClick={() =>{
       setShowAuthModal(true)
+      setOpen(false)
+    }
     }
     className="
        md:block

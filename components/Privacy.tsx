@@ -1,6 +1,13 @@
 import { Check, Shield } from "lucide-react";
 
 export default function Privacy() {
+  const privacyFeatures = [
+    "Privacy-focused design",
+    "Secure audio processing",
+    "User-controlled data",
+    "Built with security best practices",
+  ];
+
   return (
     <section id="privacy" className="py-32 bg-[#fafafa]">
       <div className="max-w-7xl mx-auto px-6">
@@ -9,26 +16,21 @@ export default function Privacy() {
           {/* Left Content */}
           <div>
             <h2 className="text-5xl md:text-7xl font-extrabold leading-tight text-[#020826]">
-              Your privacy is
+              Built With
               <br />
               <span className="bg-gradient-to-r from-pink-500 via-orange-400 to-orange-300 bg-clip-text text-transparent">
-                non-negotiable
+                Privacy & Security
               </span>
             </h2>
 
             <p className="mt-8 text-2xl leading-relaxed text-slate-500 max-w-xl">
-              Audio is processed on your device. We never
-              store recordings or transcripts of your
-              interviews. Your edge — your data.
+              Our AI interview assistant is designed with privacy,
+              security, and user control in mind, helping you
+              prepare for coding interviews with confidence.
             </p>
 
             <div className="mt-12 space-y-6">
-              {[
-                "End-to-end encrypted",
-                "No recordings stored",
-                "Undetectable to interviewers",
-                "GDPR & SOC2 ready",
-              ].map((item) => (
+              {privacyFeatures.map((item) => (
                 <div
                   key={item}
                   className="flex items-center gap-4"

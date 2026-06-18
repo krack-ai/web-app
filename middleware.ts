@@ -1,26 +1,36 @@
-import { NextRequest } from "next/server";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
+import { jwtDecode } from "jwt-decode";
 
-export function middleware(
-  req: NextRequest
-) {
-  const token =
-    req.cookies.get("token")?.value;
+interface TokenPayload {
+  isAdmin?: boolean;
+}
 
-  const protectedRoutes = [
-    "/profile",
-    "/admin",
-  ];
+export function middleware(req: NextRequest) {
+  const token = req.cookies.get("token")?.value;
 
-  const isProtected =
-    protectedRoutes.some(route =>
-      req.nextUrl.pathname.startsWith(route)
-    );
+  const pathname = req.nextUrl.pathname;
 
-  if (isProtected && !token) {
-    return NextResponse.redirect(
-      new URL("/", req.url)
-    );
+  // Redirect unauthenticated users
+  if (
+    (pathname.startsWith("/profile") ||
+      pathname.startsWith("/dashboard") ||
+      pathname.startsWith("/admin")) &&
+    !token
+  ) {
+    return NextResponse.redirect(new URL("/", req.url));
+  }
+
+  // Check admin access
+  if (pathname.startsWith("/admin") && token) {
+    try {
+      const decoded = jwtDecode<TokenPayload>(token);
+
+      if (!decoded.isAdmin) {
+        return NextResponse.redirect(new URL("/", req.url));
+      }
+    } catch {
+      return NextResponse.redirect(new URL("/", req.url));
+    }
   }
 
   return NextResponse.next();
@@ -30,5 +40,6 @@ export const config = {
   matcher: [
     "/profile/:path*",
     "/dashboard/:path*",
+    "/admin/:path*",
   ],
 };

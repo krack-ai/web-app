@@ -10,66 +10,64 @@ import {
 const features = [
   {
     icon: Mic,
-    title: "Real-Time Transcription",
+    title: "Interview Question Capture",
     description:
-      "Captures every question instantly with crystal-clear accuracy.",
+      "Capture interview questions from voice or audio in real time.",
   },
   {
     icon: Brain,
-    title: "Smart AI Answers",
+    title: "AI Interview Assistance",
     description:
-      "Generates thoughtful, tailored answers within seconds.",
+      "Get AI-powered guidance and suggestions for technical and behavioral interview questions.",
   },
   {
     icon: Shield,
-    title: "100% Private",
+    title: "Private & Secure",
     description:
-      "Runs locally on your device. Nothing is shared or recorded.",
+      "Built with privacy in mind to help protect your interview data and conversations.",
   },
   {
     icon: Zap,
-    title: "Blazing Fast",
+    title: "Fast Responses",
     description:
-      "Sub-second response times — never miss a beat.",
+      "Receive quick interview guidance to stay focused during preparation and practice.",
   },
   {
     icon: Monitor,
-    title: "Works Everywhere",
+    title: "Multi-Platform Support",
     description:
-      "Zoom, Meet, Teams, phone calls — any interview platform.",
+      "Use alongside popular video meeting and communication platforms.",
   },
   {
     icon: Sparkles,
-    title: "Custom Personas",
+    title: "Personalized Interview Help",
     description:
-      "Tune the AI to match your background and voice.",
+      "Customize assistance based on your role, experience, and technology stack.",
   },
 ];
 
 export default function Features() {
   return (
-    <section id="features" className=" bg-[#fafafa]">
+    <section id="features" className="bg-[#fafafa] py-24">
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
         <div className="text-center mb-20">
           <h2 className="text-5xl md:text-7xl font-extrabold leading-tight text-[#020826]">
-            Everything you need to{" "}
-            <span className="bg-gradient-to-r from-pink-500 via-orange-400 to-orange-300 bg-clip-text text-transparent">
-              ace
-            </span>
+            AI Tools For
             <br />
             <span className="bg-gradient-to-r from-pink-500 via-orange-400 to-orange-300 bg-clip-text text-transparent">
-              the interview
+              Interview Preparation
             </span>
           </h2>
 
-          <p className="mt-8 text-2xl text-slate-500">
-            Built to feel invisible to the interviewer and
-            indispensable to you.
+          <p className="mt-8 text-2xl text-slate-500 max-w-4xl mx-auto">
+            Prepare for coding interviews with AI-powered guidance,
+            interview question analysis, and personalized support
+            for software engineering roles.
           </p>
         </div>
 
-        {/* Cards */}
+        {/* Feature Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
           {features.map((feature, index) => {
             const Icon = feature.icon;
@@ -84,6 +82,7 @@ export default function Features() {
                   rounded-[32px]
                   p-10
                   hover:shadow-lg
+                  hover:-translate-y-1
                   transition-all
                   duration-300
                 "
@@ -113,7 +112,7 @@ export default function Features() {
                   {feature.title}
                 </h3>
 
-                <p className="text-slate-500 text-xl leading-relaxed">
+                <p className="text-slate-500 text-lg leading-relaxed">
                   {feature.description}
                 </p>
               </div>

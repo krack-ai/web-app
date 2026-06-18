@@ -48,7 +48,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="/privacy-policy"
+                  href="/public/privacy-policy"
                   className="text-black hover:text-white"
                 >
                   Privacy Policy
@@ -57,7 +57,7 @@ export default function Footer() {
 
               <li>
                 <Link
-                  href="/terms-and-conditions"
+                  href="/public/terms-and-conditions"
                   className="text-black hover:text-white"
                 >
                   Terms & Conditions
@@ -66,7 +66,7 @@ export default function Footer() {
 
               <li>
                 <Link
-                  href="/refund-policy"
+                  href="/public/refund-policy"
                   className="text-black hover:text-white"
                 >
                   Refund Policy
