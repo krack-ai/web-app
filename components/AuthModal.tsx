@@ -448,8 +448,19 @@ export default function AuthModal({
       };
 
     return (
-        <div className="fixed inset-0 z-[9999999] bg-black/50 flex items-center justify-center p-4">
-            <div className="bg-white w-full max-w-2xl rounded-3xl shadow-xl max-h-[90vh] overflow-y-auto">
+        <div className="
+        fixed inset-0 
+        bg-[#0B1225]
+        flex items-center
+        justify-center
+        overflow-hidden ">
+
+        <div className="absolute -left-32 -top-52 w-[768px] h-[623px] rounded-full bg-[#D4E4FF]/3 blur-[120px]" />
+        <div className="absolute -right-32 -bottom-52 w-[640px] h-[519px] rounded-full bg-[#4EDEA3]/3 blur-[120px]" />
+        <div className="absolute left-[45%] top-[55%] -translate-x-1/2 -translate-y-1/2 w-[512px] h-[468px] rounded-full bg-[#3B82F6] blur-[222px]" />
+        <div className="absolute left-[55%] top-[55%] -translate-x-1/2 -translate-y-1/2 w-[512px] h-[468px] rounded-full bg-[#8B5CF6] blur-[222px]" />
+
+            <div className=" relative z-10 bg-[#182034] border border-white/[0.08] backdrop-blur-[12px] w-full max-w-[479px] rounded-xl  max-h-[90vh] overflow-y-auto">
 
             <Snackbar
                 open={snackbar.open}
@@ -458,14 +469,14 @@ export default function AuthModal({
             />
 
                 {/* Header */}
-                <div className="sticky top-0 bg-white text-black border-b px-6 py-4 flex items-center justify-between">
+                <div className="sticky top-0 bg-transparent text-[#DAE2FD] border-b border-white/5 px-6 py-4 flex items-center justify-between">
                     <h2 className="text-2xl font-bold">
                         {mode === "login"
                             ? "Sign In"
                             : "Create Account"}
                     </h2>
 
-                    <button onClick={onClose}>
+                    <button onClick={onClose} className="text-[#DAE2FD] hover:text-[#40DEA3]">
                         <X />
                     </button>
                 </div>
@@ -474,14 +485,14 @@ export default function AuthModal({
 
                     {/* LOGIN */}
                     {mode === "login" && (
-                        <div className="space-y-4 text-black">
+                        <div className="space-y-4 text-[#DAE2FD]">
 
                             <input
                                 name="email"
                                 value={loginForm.email}
                                 onChange={handleLoginForm}
                                 placeholder="Email"
-                                className="w-full border rounded-xl p-4"
+                                className="w-full border border-[#6B7280] bg-[#0B1225] text-[#DAE2FD] rounded-xl p-4 placeholder:text-[#C1C7D3]"
                             />
 
                             <input
@@ -490,21 +501,22 @@ export default function AuthModal({
                                 value={loginForm.password}
                                 onChange={handleLoginForm}
                                 placeholder="Password"
-                                className="w-full border rounded-xl p-4"
+                                className="w-full border border-[#1F2A44] bg-[#0B1225] text-[#DAE2FD] rounded-xl p-4 placeholder:text-[#C1C7D3]"
                             />
 
                             <button
                             onClick={handleLogin}
                                 className="
-                  w-full
-                  py-4
-                  rounded-xl
-                  text-white
-                  font-semibold
-                  bg-gradient-to-r
-                  from-pink-500
-                  to-orange-300
-                "
+                 
+                                w-full
+                                py-4
+                                rounded-[12px]
+                              text-[#0B1225]
+                                font-semibold
+                              bg-[#40DEA3]
+                            hover:bg-[#40DEA3]/90
+                             "
+                
                             >
                                 Login
                             </button>
@@ -512,7 +524,7 @@ export default function AuthModal({
                             <p className="text-center">
                                 Don't have an account?{" "}
                                 <button
-                                    className="text-pink-500 font-semibold"
+                                    className="text-[#40DEA3] font-semibold"
                                     onClick={() => {
                                         setMode("register");
                                         setStep(1);
@@ -533,8 +545,8 @@ export default function AuthModal({
                                     <div
                                         key={item}
                                         className={`h-2 flex-1 rounded-full ${item <= step
-                                                ? "bg-gradient-to-r from-pink-500 to-orange-300"
-                                                : "bg-gray-200"
+                                                ? "bg-gradient-to-r from-[#3882F6] to-[#40DEA3]"
+                                                : "bg-[#2A303C]"
                                             }`}
                                     />
                                 ))}
@@ -550,7 +562,7 @@ export default function AuthModal({
                                             value={regsiterForm.firstName}
                                             onChange={handleChange}
                                             placeholder="First Name"
-                                            className="border rounded-xl p-4"
+                                            className=" w-full border border-[#6B7280] rounded-[24px] bg-[#FFFFFF] text-[#DAE2FD] text-[#64748B] px-6 py-5 placeholder:text-[#64748B]"
                                         />
 
                                         <input
@@ -558,8 +570,9 @@ export default function AuthModal({
                                             value={regsiterForm.lastName}
                                             onChange={handleChange}
                                             placeholder="Last Name"
-                                            className="border rounded-xl p-4"
+                                            className="w-full border border-[#6B7280] rounded-[24px] bg-[#FFFFFF] text-[#DAE2FD] text-[#64748B] px-6 py-5 placeholder:text-[#64748B]"
                                         />
+                                        
                                     </div>
 
                                     <input
@@ -567,16 +580,18 @@ export default function AuthModal({
                                         value={regsiterForm.email}
                                         onChange={handleChange}
                                         placeholder="Email"
-                                        className="w-full border rounded-xl p-4"
-                                    />
+                                        className="w-full border border-[#6B7280] rounded-[24px] bg-[#FFFFFF] text-[#DAE2FD] text-[#64748B] px-6 py-5 placeholder:text-[#64748B]"
+                                        />
+                                    
 
                                     <input
                                         name="phone"
                                         value={regsiterForm.phone}
                                         onChange={handleChange}
                                         placeholder="Phone"
-                                        className="w-full border rounded-xl p-4"
-                                    />
+                                        className="w-full border border-[#6B7280] rounded-[24px] bg-[#FFFFFF] text-[#DAE2FD] text-[#64748B] px-6 py-5 placeholder:text-[#64748B]"
+                                        />
+                                    
 
                                     <input
                                         name="password"
@@ -584,8 +599,9 @@ export default function AuthModal({
                                         onChange={handleChange}
                                         type="password"
                                         placeholder="Password"
-                                        className="w-full border rounded-xl p-4"
-                                    />
+                                        className="w-full border border-[#6B7280] rounded-[24px] bg-[#FFFFFF] text-[#DAE2FD] text-[#64748B] px-6 py-5 placeholder:text-[#64748B]"
+                                        />
+                                    
 
                                     <input
                                         name="confirmPassword"
@@ -593,19 +609,20 @@ export default function AuthModal({
                                         onChange={handleChange}
                                         type="password"
                                         placeholder="Confirm Password"
-                                        className="w-full border rounded-xl p-4"
-                                    />
+                                        className="w-full border border-[#6B7280] rounded-[24px] bg-[#FFFFFF] text-[#DAE2FD] text-[#64748B] px-6 py-5 placeholder:text-[#64748B]"
+                                        />
+                                    
 
                                     <button
                                         onClick={(() => sendOtp())}
                                         className="
                       w-full
                       py-4
-                      rounded-xl
-                      text-white
-                      bg-gradient-to-r
-                      from-pink-500
-                      to-orange-300
+                      rounded-[12px]
+                      bg-[#40DEA3]
+                      hover:bg-[#40DEA3]/90
+                      text-[#0B1225]
+                      font-semibold
                     "
                                     >
                                         Send OTP
@@ -617,7 +634,7 @@ export default function AuthModal({
                             {step === 2 && (
                                 <div className="space-y-4 text-black">
 
-                                    <h3 className="font-semibold">
+                                    <h3 className="font-semibold text-[#DAE2FD]">
                                         Verify OTP sent to your email :
                                     </h3>
 
@@ -684,7 +701,7 @@ export default function AuthModal({
 
                                     <div>
                                         <div className="flex items-center justify-between mb-4">
-                                            <h3 className="font-bold text-lg">
+                                            <h3 className="font-bold text-lg text-[#DAE2F]">
                                                 Projects
                                             </h3>
 
@@ -698,8 +715,10 @@ export default function AuthModal({
                           px-4
                           py-2
                           rounded-lg
-                          bg-pink-100
-                          text-pink-600
+                          border border-[#40DEA3]
+                          bg-transparent
+                          text-[40DEA3]
+                          hover:bg-[#40DEA3]/10
                         "
                                             >
                                                 <Plus size={18} />
@@ -710,10 +729,10 @@ export default function AuthModal({
                                         {projects.map((project, index) => (
                                             <div
                                                 key={index}
-                                                className="border rounded-2xl p-4 mb-4"
+                                                className="border border-[#334155] bg[#0B1225]/40 rounded-2xl p-4 mb-4"
                                             >
                                                 <div className="flex items-center justify-between mb-3">
-                                                    <h4 className="font-semibold">
+                                                    <h4 className="font-semibold text-[#DAE2FD]">
                                                         Project {index + 1}
                                                     </h4>
 
@@ -726,7 +745,7 @@ export default function AuthModal({
             items-center
             gap-1
             text-red-500
-            hover:text-red-600
+            hover:text-red-400
           "
                                                         >
                                                             <Trash2 size={18} />
@@ -781,10 +800,10 @@ export default function AuthModal({
                                 </div>
                             )}
 
-                            <p className="text-center text-black mt-6">
+                            <p className="text-center text-[#C1C7D3] mt-6">
                                 Already have an account?{" "}
                                 <button
-                                    className="text-pink-500 font-semibold"
+                                    className="text-[#40DEA3] font-semibold"
                                     onClick={() =>
                                         setMode("login")
                                     }

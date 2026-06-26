@@ -10,20 +10,49 @@ import {
 
 export default function DownloadPage() {
   return (
-    <main className="bg-[#fafafa]">
+    <main className="relative overflow-hidden bg-[#0B1326]">
+      {/* hero*/}
+      <section className="relative py-24 overflow-hidden bg-[#0B1326]">
 
-      {/* HERO */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-
-          <h1 className="text-5xl md:text-7xl font-extrabold text-[#020826]">
-            Download{" "}
-            <span className="bg-gradient-to-r from-pink-500 via-orange-400 to-orange-300 bg-clip-text text-transparent">
+      {/* Background Blur Effects*/}
+       <div
+      className="
+      absolute
+      left-[15%]
+      top-[100px]
+      w-[512px]
+      h-[468px]
+      rounded-[12px]
+      bg-[#3B82F6]/40
+      blur-[222px]
+      "
+    />
+      {/* Background Blur Effects */}
+      <div
+      className="
+      absolute
+      left-1/2
+      top-[240px]
+      -translate-x-1/2
+      w-[512px]
+      h-[468px]
+      rounded-[12px]
+      bg-[#8B5CF6]/40
+      blur-[263px]
+      "/>
+       {/* Existing content */}
+    <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+    
+          <h1 className="text-5xl md:text-7xl font-extrabold ">
+            <span className="text-[#3B82F6]">
+            Download
+            </span>{" "}
+            <span className="text-[#DAE2FD]">
               Krack-AI
             </span>
           </h1>
 
-          <p className="max-w-3xl mx-auto mt-8 text-xl text-slate-500 leading-relaxed">
+          <p className="max-w-3xl mx-auto mt-8 text-xl text-[#C3C6D3] leading-relaxed">
             Realtime AI interview assistant for coding,
             technical, and system design interviews.
             Get instant guidance, coding help, and
@@ -39,18 +68,17 @@ export default function DownloadPage() {
                 inline-flex
                 items-center
                 justify-center
-                gap-3
+                gap-4
                 px-8
                 py-4
-                rounded-full
-                text-white
+                rounded-lg
+                bg-[#D4E4FF]
+                border border-[#43474F]
+                text-[#171F33]
                 font-semibold
-                bg-gradient-to-r
-                from-pink-500
-                to-orange-300
               "
             >
-              <Download size={20} />
+              <Download size={20} className="text-[#171F33]" />
               Download for Windows
             </a>
 
@@ -61,16 +89,17 @@ export default function DownloadPage() {
                 inline-flex
                 items-center
                 justify-center
-                gap-3
+                gap-4
                 px-8
                 py-4
-                rounded-full
-                border
-                bg-white
+                rounded-lg
+                bg-[#171F33]
+                border border-[#43474F]
+                text-[#D4E4FF]
                 font-semibold
               "
             >
-              <Download size={20} />
+              <Download size={20} className="text-[#D4E4FF]" />
               Download for Mac
             </a>
 
@@ -86,17 +115,17 @@ export default function DownloadPage() {
           <div className="grid md:grid-cols-3 gap-8">
 
             {/* WINDOWS */}
-            <div className="bg-white border rounded-3xl p-8 shadow-sm">
+            <div className="bg-[#0B1225] border border-[#414751]/30 rounded-3xl p-8 shadow-sm">
               <Monitor
                 size={50}
-                className="text-pink-500"
+                className="text-[#40DEA3]"
               />
 
-              <h3 className="text-3xl font-bold mt-5">
+              <h3 className="text-3xl font-bold mt-5 text-[#DAE2FD]">
                 Windows
               </h3>
 
-              <p className="text-slate-500 mt-3">
+              <p className="text-[#A3AED0] mt-3">
                 Windows 10 & 11 Supported
               </p>
 
@@ -108,11 +137,11 @@ export default function DownloadPage() {
                   w-full
                   text-center
                   py-4
-                  rounded-full
-                  text-white
-                  bg-gradient-to-r
-                  from-pink-500
-                  to-orange-300
+                  rounded-lg
+                  bg-[#D4E4FF]
+                  border border-[#43474F]
+                text-[#171F33]
+                  font-semibold
                 "
               >
                 Download .exe
@@ -121,17 +150,17 @@ export default function DownloadPage() {
 
             {/* MAC */}
 
-            <div className="bg-white border rounded-3xl p-8 shadow-sm">
+            <div className="bg-[#0B1225] border border-[#414751]/30 rounded-3xl p-8 shadow-sm">
               <Laptop
                 size={50}
-                className="text-pink-500"
+                className="text-[#40DEA3]"
               />
 
-              <h3 className="text-3xl font-bold mt-5">
+              <h3 className="text-3xl font-bold mt-5 text-[#DAE2FD]">
                 macOS
               </h3>
 
-              <p className="text-slate-500 mt-3">
+              <p className="text-[#A3AED0] mt-3">
                 Intel & Apple Silicon
               </p>
 
@@ -144,11 +173,11 @@ export default function DownloadPage() {
                   w-full
                   text-center
                   py-4
-                  rounded-full
-                  text-white
-                  bg-gradient-to-r
-                  from-pink-500
-                  to-orange-300
+                  rounded-lg
+                  bg-[#171F33]
+                  border border-[#43474F]
+                  text-[#D4E4FF]
+                  font-semibold
                 "
               >
                 Download .dmg
@@ -157,17 +186,17 @@ export default function DownloadPage() {
 
             {/* MANUAL */}
 
-            <div className="bg-white border rounded-3xl p-8 shadow-sm">
+            <div className="bg-[#0B1225] border border-[#414751]/30 rounded-3xl p-8 shadow-sm">
               <BookOpen
                 size={50}
-                className="text-pink-500"
+                className="text-[#40DEA3]"
               />
 
-              <h3 className="text-3xl font-bold mt-5">
+              <h3 className="text-3xl font-bold mt-5 text-[#DAE2FD]">
                 User Manual
               </h3>
 
-              <p className="text-slate-500 mt-3">
+              <p className="text-[#A3AED0] mt-3">
                 Installation & Usage Guide
               </p>
 
@@ -180,8 +209,11 @@ export default function DownloadPage() {
                   text-center
                   py-4
                   rounded-full
-                  border
+                  bg-[#A4CDFF]
+                  text-[#0B1225]
                   font-semibold
+                  hover:bg-[#A4CDFF]/90
+                  transition
                 "
               >
                 Download PDF
@@ -194,10 +226,10 @@ export default function DownloadPage() {
 
       {/* FEATURES */}
 
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[#0B1225]">
         <div className="max-w-7xl mx-auto px-6">
 
-          <h2 className="text-5xl font-bold text-center mb-16">
+          <h2 className="text-5xl font-bold text-center mb-16 text-[#DAE2FD]">
             Why Krack-AI?
           </h2>
 
@@ -211,14 +243,14 @@ export default function DownloadPage() {
             ].map((item) => (
               <div
                 key={item}
-                className="border rounded-3xl p-8"
+                className="border border-[#414751]/30 rounded-3xl p-8"
               >
                 <CheckCircle
-                  className="text-pink-500"
+                  className="text-[#40DEA3]"
                   size={32}
                 />
 
-                <h3 className="font-bold text-xl mt-4">
+                <h3 className="font-bold text-xl mt-4 text-[#DAE2FD]">
                   {item}
                 </h3>
               </div>
@@ -230,10 +262,10 @@ export default function DownloadPage() {
 
       {/* INSTALLATION */}
 
-      <section className="py-24">
+      <section className="py-24 bg-[#0B1225]">
         <div className="max-w-7xl mx-auto px-6">
 
-          <h2 className="text-5xl font-bold text-center mb-16">
+          <h2 className="text-5xl font-bold text-center mb-16 text-[#DAE2FD]">
             Installation Guide
           </h2>
 
@@ -241,13 +273,13 @@ export default function DownloadPage() {
 
             {/* WINDOWS */}
 
-            <div className="bg-white rounded-3xl border p-8">
+            <div className="bg-[#0B1225] rounded-3xl border border-[#414751]/30 p-8">
 
-              <h3 className="text-3xl font-bold mb-8">
+              <h3 className="text-3xl font-bold mb-8 text-[#DAE2FD]">
                 Windows
               </h3>
 
-              <div className="space-y-4 text-slate-600">
+              <div className="space-y-4 text-[#A3AED0]">
 
                 <p>1. Download the .exe installer.</p>
 
@@ -274,13 +306,13 @@ export default function DownloadPage() {
 
             {/* MAC */}
 
-            <div className="bg-white rounded-3xl border p-8">
+            <div className="bg-[#0B1225] rounded-3xl border border-[#414751]/30 p-8">
 
-              <h3 className="text-3xl font-bold mb-8">
+              <h3 className="text-3xl font-bold mb-8 text-[#DAE2FD]">
                 macOS
               </h3>
 
-              <div className="space-y-4 text-slate-600">
+              <div className="space-y-4 text-[#A3AED0]">
 
                 <p>1. Download the .dmg file.</p>
 
@@ -290,7 +322,7 @@ export default function DownloadPage() {
                   3. Open Terminal and run:
                 </p>
 
-                <div className="bg-[#020826] text-green-400 p-4 rounded-xl font-mono">
+                <div className="bg-[#131b2e] text-[#40DEA3] p-4 rounded-xl font-mono">
                   xattr -cr
                   {" "}
                   /Applications/Krack-AI.app
@@ -310,20 +342,44 @@ export default function DownloadPage() {
 
       {/* CTA */}
 
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[#0B1225]">
         <div className="max-w-4xl mx-auto px-6 text-center">
 
-          <h2 className="text-5xl font-bold text-[#020826]">
+          <h2 className="text-5xl font-bold text-[#DAE2FD]">
             Ready to Crack Your Interview?
           </h2>
 
-          <p className="mt-6 text-xl text-slate-500">
+          <p className="mt-6 text-xl text-[#A3AED0]">
             Download Krack-AI and get realtime AI
             assistance during technical interviews.
           </p>
 
+          <a
+            href="/api/download/windows"
+            download
+            className="
+              mt-10
+              inline-flex
+              items-center
+              justify-center
+              gap-3
+              px-8
+              py-4
+              rounded-full
+              text-[#0B1225]
+              font-bold
+              bg-gradient-to-r
+              from-[#3882F6]
+              to-[#40DEA3]
+            "
+          >
+            <Download size={20} className="text-[#0B1225]" />
+            Download for Windows
+          </a>
+
         </div>
       </section>
+      
 
     </main>
   );

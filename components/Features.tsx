@@ -48,22 +48,22 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className=" bg-[#fafafa]">
+    <section id="features" className=" bg-[#0B1225]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
         <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-7xl font-extrabold leading-tight text-[#020826]">
+          <h2 className="text-5xl md:text-7xl font-extrabold leading-tight text-[#DAE2FD]">
             Everything you need to{" "}
-            <span className="bg-gradient-to-r from-pink-500 via-orange-400 to-orange-300 bg-clip-text text-transparent">
+            <span className="text-[#DAE2FD]">
               ace
             </span>
             <br />
-            <span className="bg-gradient-to-r from-pink-500 via-orange-400 to-orange-300 bg-clip-text text-transparent">
+            <span className="text-[#DAE2FD]">
               the interview
             </span>
           </h2>
 
-          <p className="mt-8 text-2xl text-slate-500">
+          <p className="mt-8 text-2xl text-[#C1C7D3]">
             Built to feel invisible to the interviewer and
             indispensable to you.
           </p>
@@ -78,12 +78,13 @@ export default function Features() {
               <div
                 key={index}
                 className="
-                  bg-white
+                  bg-gradient-to-b
+                  from-[#171F33]
+                  to-[#0B1326]
                   border
-                  border-gray-200
+                  border-[#334155]
                   rounded-[32px]
                   p-10
-                  hover:shadow-lg
                   transition-all
                   duration-300
                 "
@@ -95,8 +96,8 @@ export default function Features() {
                     h-16
                     rounded-2xl
                     bg-gradient-to-r
-                    from-pink-500
-                    to-orange-300
+                    from-[#3882F6]
+                    to-[#40DEA3]
                     flex
                     items-center
                     justify-center
@@ -105,15 +106,15 @@ export default function Features() {
                 >
                   <Icon
                     size={28}
-                    className="text-white"
+                    className="text-[#DAE2FD]"
                   />
                 </div>
 
-                <h3 className="text-2xl font-bold text-[#020826] mb-4">
+                <h3 className="text-2xl font-bold text-[#DAE2FD] mb-4">
                   {feature.title}
                 </h3>
 
-                <p className="text-slate-500 text-xl leading-relaxed">
+                <p className="text-[#C1C7D3] text-xl leading-relaxed">
                   {feature.description}
                 </p>
               </div>

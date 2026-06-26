@@ -22,7 +22,7 @@ const technologies = [
 
 export default function Footer() {
   return (
-    <footer id="footer" className="bg-gradient-to-r from-pink-500 to-orange-300 text-black">
+    <footer id="footer" className="bg-[#0B1326] text-white">
       <div className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid md:grid-cols-4 gap-12">
           
@@ -32,7 +32,7 @@ export default function Footer() {
               KrackAI
             </h3>
 
-            <p className="text-black leading-relaxed">
+            <p className="text-white leading-relaxed">
               AI-powered interview assistant helping
               developers crack coding and technical
               interviews.
@@ -49,7 +49,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/privacy-policy"
-                  className="text-black hover:text-white"
+                  className="text-white hover:text-white"
                 >
                   Privacy Policy
                 </Link>
@@ -58,7 +58,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/terms-and-conditions"
-                  className="text-black hover:text-white"
+                  className="text-white hover:text-white"
                 >
                   Terms & Conditions
                 </Link>
@@ -67,7 +67,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/refund-policy"
-                  className="text-black hover:text-white"
+                  className="text-white hover:text-white"
                 >
                   Refund Policy
                 </Link>
@@ -97,7 +97,7 @@ export default function Footer() {
                     href={`/interview-questions/${tech
                       .toLowerCase()
                       .replaceAll(" ", "-")}`}
-                    className="text-black hover:text-white"
+                    className="text-white hover:text-white"
                   > */}
                     {tech} Interview Questions
                   {/* </Link> */}
@@ -119,7 +119,7 @@ export default function Footer() {
                     href={`/interview-questions/${tech
                       .toLowerCase()
                       .replaceAll(" ", "-")}`}
-                    className="text-black hover:text-white"
+                    className="text-white hover:text-white"
                   > */}
                     {tech} Interview Questions
                   {/* </Link> */}
@@ -130,7 +130,7 @@ export default function Footer() {
 
         </div>
 
-        <div className="border-t border-gray-800 mt-14 pt-8 text-center text-black">
+        <div className="border-t border-white mt-14 pt-8 text-center text-white">
           © {new Date().getFullYear()} KrackAI.
           All rights reserved.
         </div>

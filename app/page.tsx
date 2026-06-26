@@ -7,7 +7,7 @@ import ReferralBanner from "@/components/ReferralBanner";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[#f8f8f8]">
+    <main className="min-h-screen bg-[#0B1225]">
       <ReferralBanner />
       <Hero />
       <Features />

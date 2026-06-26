@@ -8,28 +8,28 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="bg-[#fafafa] min-h-screen py-20">
+    <main className="bg-[#0B1225] min-h-screen py-20">
       <div className="max-w-5xl mx-auto px-6">
 
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-7xl font-extrabold text-[#020826]">
+          <h1 className="text-5xl md:text-7xl font-extrabold text-[#DAE2FD]">
             Privacy{" "}
-            <span className="bg-gradient-to-r from-pink-500 via-orange-400 to-orange-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#3882F6] to-[#40DEA3] bg-clip-text text-transparent">
               Policy
             </span>
           </h1>
 
-          <p className="mt-6 text-xl text-slate-500">
+          <p className="mt-6 text-xl text-[#A3AED0]">
             Last Updated: June 2026
           </p>
         </div>
 
         {/* Content */}
-        <div className="bg-white border border-gray-200 rounded-3xl p-8 md:p-12 shadow-sm">
+        <div className="bg-[#0B1225] border border-[#414751]/30 rounded-3xl p-8 md:p-12 shadow-sm">
 
           <section className="mb-10">
-            <p className="text-lg text-slate-600 leading-8">
+            <p className="text-lg text-[#A3AED0] leading-8">
               Welcome to Krack-AI ("Krack-AI", "we", "our", or "us").
               Your privacy is important to us. This Privacy Policy
               explains how we collect, use, store, and protect your
@@ -38,16 +38,16 @@ export default function PrivacyPolicyPage() {
             </p>
           </section>
 
-          <section className="mb-10">
-            <h2 className="text-3xl font-bold text-[#020826] mb-4">
+          <section className="mb-10 text-[#DAE2FD]">
+            <h2 className="text-3xl font-bold text-[#DAE2FD] mb-4">
               1. Information We Collect
             </h2>
 
-            <h3 className="text-xl font-semibold mb-3">
+            <h3 className="text-xl font-semibold mb-3 text-[#DAE2FD]">
               Account Information
             </h3>
 
-            <ul className="list-disc pl-6 space-y-2 text-slate-600">
+            <ul className="list-disc pl-6 space-y-2 text-[#A3AED0]">
               <li>First Name</li>
               <li>Last Name</li>
               <li>Email Address</li>
@@ -58,11 +58,11 @@ export default function PrivacyPolicyPage() {
               <li>Project Information</li>
             </ul>
 
-            <h3 className="text-xl font-semibold mt-8 mb-3">
+            <h3 className="text-xl font-semibold mt-8 mb-3 text-[#DAE2FD]">
               Usage Information
             </h3>
 
-            <ul className="list-disc pl-6 space-y-2 text-slate-600">
+            <ul className="list-disc pl-6 space-y-2 text-[#A3AED0]">
               <li>Login activity</li>
               <li>Subscription status</li>
               <li>Minutes usage</li>
@@ -74,11 +74,11 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-3xl font-bold text-[#020826] mb-4">
+            <h2 className="text-3xl font-bold text-[#DAE2FD] mb-4">
               2. How We Use Your Information
             </h2>
 
-            <ul className="list-disc pl-6 space-y-2 text-slate-600">
+            <ul className="list-disc pl-6 space-y-2 text-[#A3AED0]">
               <li>Create and manage your account</li>
               <li>Provide AI-powered interview assistance</li>
               <li>Process subscriptions and payments</li>
@@ -90,11 +90,11 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-3xl font-bold text-[#020826] mb-4">
+            <h2 className="text-3xl font-bold text-[#DAE2FD] mb-4">
               3. AI Processing & Interview Data
             </h2>
 
-            <p className="text-slate-600 leading-8">
+            <p className="text-[#A3AED0] leading-8">
               Krack-AI is built with privacy in mind. We do not
               permanently store live interview audio, recordings,
               transcriptions, or generated responses. Some temporary
@@ -103,11 +103,11 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-3xl font-bold text-[#020826] mb-4">
+            <h2 className="text-3xl font-bold text-[#DAE2FD] mb-4">
               4. Payment Information
             </h2>
 
-            <p className="text-slate-600 leading-8">
+            <p className="text-[#A3AED0] leading-8">
               Payments are processed through trusted third-party
               payment providers. Krack-AI does not store credit card
               numbers, debit card information, banking credentials,
@@ -115,12 +115,12 @@ export default function PrivacyPolicyPage() {
             </p>
           </section>
 
-          <section className="mb-10">
-            <h2 className="text-3xl font-bold text-[#020826] mb-4">
+          <section className="mb-10 text-[#DAE2FD]">
+            <h2 className="text-3xl font-bold text-[#DAE2FD] mb-4">
               5. Data Security
             </h2>
 
-            <ul className="list-disc pl-6 space-y-2 text-slate-600">
+            <ul className="list-disc pl-6 space-y-2 text-[#A3AED0]">
               <li>Secure HTTPS connections</li>
               <li>Password hashing</li>
               <li>Authentication protections</li>
@@ -128,18 +128,18 @@ export default function PrivacyPolicyPage() {
               <li>Access control mechanisms</li>
             </ul>
 
-            <p className="text-slate-600 mt-4">
+            <p className="text-[#A3AED0] mt-4">
               While we take reasonable measures to protect your data,
               no internet transmission is completely secure.
             </p>
           </section>
 
           <section className="mb-10">
-            <h2 className="text-3xl font-bold text-[#020826] mb-4">
+            <h2 className="text-3xl font-bold text-[#DAE2FD] mb-4">
               6. Cookies
             </h2>
 
-            <p className="text-slate-600 leading-8">
+            <p className="text-[#A3AED0] leading-8">
               We use cookies and similar technologies to maintain
               login sessions, improve user experience, analyze
               platform usage, and remember preferences.
@@ -147,11 +147,11 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-3xl font-bold text-[#020826] mb-4">
+            <h2 className="text-3xl font-bold text-[#DAE2FD] mb-4">
               7. Third-Party Services
             </h2>
 
-            <p className="text-slate-600 leading-8">
+            <p className="text-[#A3AED0] leading-8">
               We may use third-party providers for payments,
               analytics, email delivery, cloud hosting, and customer
               support. These providers only receive information
@@ -160,11 +160,11 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-3xl font-bold text-[#020826] mb-4">
+            <h2 className="text-3xl font-bold text-[#DAE2FD] mb-4">
               8. Account Deletion
             </h2>
 
-            <p className="text-slate-600 leading-8">
+            <p className="text-[#A3AED0] leading-8">
               You may request deletion of your account at any time.
               We will remove your personal information unless
               retention is required by law or for fraud prevention.
@@ -172,11 +172,11 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-3xl font-bold text-[#020826] mb-4">
+            <h2 className="text-3xl font-bold text-[#DAE2FD] mb-4">
               9. Children's Privacy
             </h2>
 
-            <p className="text-slate-600 leading-8">
+            <p className="text-[#A3AED0] leading-8">
               Krack-AI is not intended for individuals under the age
               of 13, and we do not knowingly collect personal
               information from children.
@@ -184,11 +184,11 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-3xl font-bold text-[#020826] mb-4">
+            <h2 className="text-3xl font-bold text-[#DAE2FD] mb-4">
               10. Changes To This Policy
             </h2>
 
-            <p className="text-slate-600 leading-8">
+            <p className="text-[#A3AED0] leading-8">
               We may update this Privacy Policy from time to time.
               Changes become effective immediately upon publication
               on this page.
@@ -196,11 +196,11 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section>
-            <h2 className="text-3xl font-bold text-[#020826] mb-4">
+            <h2 className="text-3xl font-bold text-[#DAE2FD] mb-4">
               11. Contact Us
             </h2>
 
-            <div className="space-y-3 text-slate-600">
+            <div className="space-y-3 text-[#A3AED0]">
               <p>Email: support@krack-ai.com</p>
               <p>Website: https://krack-ai.com</p>
             </div>

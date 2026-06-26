@@ -207,29 +207,29 @@ export default function ProfilePage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center bg-[#0B1225] text-[#DAE2FD]">
         Loading...
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-pink-50 to-orange-50 py-12">
+    <div className="min-h-screen bg-[#0B1225] py-12">
       <div className="max-w-5xl mx-auto px-6">
 
-        <div className="bg-white text-black rounded-3xl shadow-xl p-8">
+        <div className="bg-[#0B1225] text-[#DAE2FD] border border-[#414751]/30 rounded-3xl shadow-xl p-8">
 
           <h1 className="text-4xl font-bold mb-2">
             My Profile
           </h1>
 
-          <p className="text-black mb-10">
+          <p className="text-[#A3AED0] mb-10">
             Update your
             professional
             details
           </p>
 
-          <div className="grid md:grid-cols-2 gap-5">
+          <div className="grid md:grid-cols-2 gap-5 text-black">
 
             <input
               name="firstName"
@@ -240,7 +240,7 @@ export default function ProfilePage() {
                 handleChange
               }
               placeholder="First Name"
-              className="border rounded-xl p-4"
+              className="border border-gray-200 bg-white rounded-xl p-4 text-black"
             />
 
             <input
@@ -252,7 +252,7 @@ export default function ProfilePage() {
                 handleChange
               }
               placeholder="Last Name"
-              className="border rounded-xl p-4"
+              className="border border-gray-200 bg-white rounded-xl p-4 text-black"
             />
 
             <input
@@ -260,7 +260,7 @@ export default function ProfilePage() {
                 form.email
               }
               disabled
-              className="border rounded-xl p-4 bg-gray-100"
+              className="border border-gray-200 rounded-xl p-4 bg-gray-100 text-gray-500"
             />
 
             <input
@@ -268,12 +268,12 @@ export default function ProfilePage() {
                 form.phone
               }
               disabled
-              className="border rounded-xl p-4 bg-gray-100"
+              className="border border-gray-200 rounded-xl p-4 bg-gray-100 text-gray-500"
             />
 
           </div>
 
-          <div className="grid md:grid-cols-2 gap-5 mt-5">
+          <div className="grid md:grid-cols-2 gap-5 mt-5 text-black">
 
             <input
               name="techStack"
@@ -284,7 +284,7 @@ export default function ProfilePage() {
                 handleChange
               }
               placeholder="Tech Stack"
-              className="border rounded-xl p-4"
+              className="border border-gray-200 bg-white rounded-xl p-4 text-black"
             />
 
             <input
@@ -296,12 +296,12 @@ export default function ProfilePage() {
                 handleChange
               }
               placeholder="Coding Languages"
-              className="border rounded-xl p-4"
+              className="border border-gray-200 bg-white rounded-xl p-4 text-black"
             />
 
           </div>
 
-          <div className="mt-5">
+          <div className="mt-5 text-black">
             <input
               name="experience"
               value={
@@ -311,7 +311,7 @@ export default function ProfilePage() {
                 handleChange
               }
               placeholder="Experience"
-              className="w-full border rounded-xl p-4"
+              className="w-full border border-gray-200 bg-white rounded-xl p-4 text-black"
             />
           </div>
 
@@ -327,7 +327,7 @@ export default function ProfilePage() {
                 onClick={
                   addProject
                 }
-                className="flex items-center gap-2 px-4 py-2 rounded-xl bg-pink-100 text-pink-600"
+                className="flex items-center gap-2 px-4 py-2 rounded-xl border border-[#40DEA3] bg-transparent text-[#40DEA3] hover:bg-[#40DEA3]/10 transition"
               >
                 <Plus
                   size={
@@ -348,11 +348,11 @@ export default function ProfilePage() {
                   key={
                     index
                   }
-                  className="border rounded-2xl p-5 mb-4"
+                  className="border border-[#414751]/30 bg-[#0B1225]/40 rounded-2xl p-5 mb-4 text-black"
                 >
                   <div className="flex justify-between mb-4">
 
-                    <h3 className="font-semibold">
+                    <h3 className="font-semibold text-[#DAE2FD]">
                       Project{" "}
                       {index +
                         1}
@@ -366,7 +366,7 @@ export default function ProfilePage() {
                             index
                           )
                         }
-                        className="text-red-500"
+                        className="text-red-500 hover:text-red-400 transition"
                       >
                         <Trash2
                           size={
@@ -393,7 +393,7 @@ export default function ProfilePage() {
                       )
                     }
                     placeholder="Project Name"
-                    className="w-full border rounded-xl p-4 mb-3"
+                    className="w-full border border-gray-200 bg-white rounded-xl p-4 mb-3 text-black"
                   />
 
                   <textarea
@@ -412,7 +412,7 @@ export default function ProfilePage() {
                       )
                     }
                     placeholder="Project Description"
-                    className="w-full border rounded-xl p-4"
+                    className="w-full border border-gray-200 bg-white rounded-xl p-4 text-black"
                   />
 
                 </div>
@@ -431,11 +431,11 @@ export default function ProfilePage() {
               w-full
               py-4
               rounded-xl
-              text-white
-              font-semibold
-              bg-gradient-to-r
-              from-pink-500
-              to-orange-300
+              text-[#0B1225]
+              font-bold
+              bg-[#A4CDFF]
+              hover:bg-[#A4CDFF]/90
+              transition
             "
           >
             {saving

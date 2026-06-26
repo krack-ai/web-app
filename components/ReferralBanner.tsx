@@ -8,9 +8,9 @@ function ReferralBanner () {
         className="
           block
           border-y
-          border-slate-200
-          bg-slate-950
-          hover:bg-slate-900
+          border-[#414751]/30
+          bg-[#0B1225]
+          hover:bg-[#0B1225]/80
           transition
         "
       >
@@ -22,15 +22,15 @@ function ReferralBanner () {
               🎁
             </span>
       
-            <span className="text-white font-semibold">
+            <span className="text-[#DAE2FD] font-semibold">
               Earn FREE Interview Minutes
             </span>
       
-            <span className="text-slate-400">
+            <span className="text-[#A3AED0]">
               for every friend who purchases a plan
             </span>
       
-            <span className="text-pink-400 font-semibold">
+            <span className="text-[#40DEA3] font-semibold">
               Learn More →
             </span>
       

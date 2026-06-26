@@ -19,42 +19,6 @@ interface Plan {
     originalPrice: number;
 }
 
-const fallbackPlans: Plan[] = [
-    {
-        id: "expert",
-        name: "Expert",
-        originalPrice: 399,
-        offerPrice: 299,
-        minutes: 60,
-        bonusMinutes: 30,
-        badge: "",
-        features: ["Realtime AI Support", "Interview Guidance", "Priority AI Support"],
-        active: true
-    },
-    {
-        id: "professional",
-        name: "Professional",
-        originalPrice: 199,
-        offerPrice: 149,
-        minutes: 30,
-        bonusMinutes: 15,
-        badge: "POPULAR",
-        features: ["Realtime AI Support", "Interview Guidance", "Coding Help"],
-        active: true
-    },
-    {
-        id: "starter",
-        name: "Starter",
-        originalPrice: 149,
-        offerPrice: 99,
-        minutes: 15,
-        bonusMinutes: 0,
-        badge: "",
-        features: ["Realtime AI Support", "Interview Guidance", "Coding Help"],
-        active: true
-    }
-];
-
 export default function Pricing() {
     const [plans, setPlans] =
         useState<Plan[]>([]);
@@ -115,25 +79,17 @@ export default function Pricing() {
             const response =
                 await fetch("/api/get-plans");
 
-            if (!response.ok) {
-                throw new Error("Failed to fetch");
-            }
-
             const data: Plan[] =
                 await response.json();
 
-            if (data && Array.isArray(data) && data.length > 0) {
+            if(data){
                 setPlans(
-                    data.filter(
-                        (plan) => plan.active
-                    )
-                );
-            } else {
-                setPlans(fallbackPlans);
-            }
+                data?.filter(
+                    (plan) => plan.active
+                )
+            );}
         } catch (error) {
-            console.error("Error fetching plans:", error);
-            setPlans(fallbackPlans);
+            console.error(error);
         } finally {
             setLoading(false);
         }
@@ -260,20 +216,20 @@ export default function Pricing() {
     return (
         <section
             id="pricing"
-            className="py-10 bg-[#0B1225]"
+            className="py-10 bg-[#fafafa]"
         >
             <div className="max-w-7xl mx-auto px-6">
 
                 {/* Header */}
                 <div className="text-center mb-20">
-                    <h2 className="text-5xl md:text-7xl font-extrabold text-[#DAE2FD]">
+                    <h2 className="text-5xl md:text-7xl font-extrabold text-[#020826]">
                         Simple{" "}
-                        <span className="text-[#DAE2FD]">
+                        <span className="bg-gradient-to-r from-pink-500 via-orange-400 to-orange-300 bg-clip-text text-transparent">
                             pricing
                         </span>
                     </h2>
 
-                    <p className="mt-6 text-2xl text-[#C1C7D3]">
+                    <p className="mt-6 text-2xl text-slate-500">
                         Choose a plan and
                         start cracking
                         interviews today.
@@ -285,18 +241,9 @@ export default function Pricing() {
                     {plans.map((plan) => (
                         <div
                             key={plan.id}
-                            className={`relative rounded-[32px] 
-                            bg-gradient-to-b
-                            from-[#171F33]
-                            to-[#0B1326]
-                             p-10
-                             
-                             
-                              transition-all 
-                              duration-300
-                               ${plan.badge
-                                    ? "border border-[#334155]"
-                                    : "border border-[#334155]"
+                            className={`relative rounded-[32px] bg-white p-10 transition-all duration-300 ${plan.badge
+                                    ? "border-2 border-orange-400 shadow-xl shadow-orange-100"
+                                    : "border border-gray-200"
                                 }`}
                         >
                             {/* Badge */}
@@ -306,12 +253,13 @@ export default function Pricing() {
                                         className="
                     px-6
                     py-2
-                    rounded-[2px]
+                    rounded-full
                     text-sm
                     font-bold
-                    text-[#0B1225]
-                    bg-[#A4CDFF]
-                    text-[#0B1225]
+                    text-white
+                    bg-gradient-to-r
+                    from-pink-500
+                    to-orange-300
                   "
                                     >
                                         {plan.badge.toUpperCase()}
@@ -320,9 +268,7 @@ export default function Pricing() {
                             )}
 
                             {/* Plan Name */}
-                            <h3 className={`text-4xl font-bold ${
-                               plan.badge ? "text-[#DAE2FD]" : "text-[#C1C7D3]"
-                            }`}>
+                            <h3 className="text-4xl font-bold text-[#020826]">
                                 {plan.name}
                             </h3>
 
@@ -330,7 +276,7 @@ export default function Pricing() {
                             <div className="mt-6">
                                 {plan.offerPrice <
                                     plan.originalPrice && (
-                                        <div className="text-[#A3AED0]/60 line-through text-2xl mb-2">
+                                        <div className="text-slate-400 line-through text-2xl mb-2">
                                             ₹
                                             {
                                                 plan.originalPrice
@@ -339,9 +285,7 @@ export default function Pricing() {
                                     )}
 
                                 <div className="flex items-end">
-                                     <span className={`text-7xl font-extrabold ${
-                                     plan.badge ? "text-[#DAE2FD]" : "text-[#C1C7D3]"
-                                     }`}>
+                                    <span className="text-7xl font-extrabold text-[#020826]">
                                         ₹
                                         {
                                             plan.offerPrice
@@ -352,17 +296,13 @@ export default function Pricing() {
 
                             {/* Minutes */}
                             <div className="mt-4">
-                                <div className={`text-lg font-semibold ${
-                                plan.badge ? "text-[#DAE2FD]" : "text-[#C1C7D3]"
-                               }`}>
+                                <div className="text-lg font-semibold text-pink-600">
                                     {plan.minutes} Minutes
                                 </div>
 
                                 {plan.bonusMinutes >
                                     0 && (
-                                        <div className={`font-medium mt-1 ${
-                                         plan.badge ? "text-[#DAE2FD]" : "text-[#C1C7D3]"
-                                        }`}>
+                                        <div className="text-green-600 font-medium mt-1">
                                             +
                                             {
                                                 plan.bonusMinutes
@@ -386,18 +326,13 @@ export default function Pricing() {
                                             className="flex items-center gap-4"
                                         >
                                             <Check
-                                                size={22}
-                                                className={
-                                                    plan.badge
-                                                        ? "text-[#DAE2FD]"
-                                                        : "text-[#A4C9FF]"
+                                                size={
+                                                    22
                                                 }
+                                                className="text-pink-500"
                                             />
 
-                                            <span className={`text-lg ${
-                                                plan.badge ? "text-[#DAE2FD]" : "text-[#C1C7D3]"
-                                            }`}>
-                                
+                                            <span className="text-lg text-[#020826]">
                                                 {
                                                     feature
                                                 }
@@ -421,9 +356,8 @@ export default function Pricing() {
                   font-semibold
                   transition
                   ${plan.badge
-                                        ? "bg-[#A4CDFF] text-[#0B1225] border border-[#A4CDFF] shadow-[0_0_20px_-5px_rgba(164,201,255,0.2)] hover:scale-[1.02]"
-                                        : "bg-transparent border border-[#334155] text-[#DAE2FD] " 
-                                        
+                                        ? "bg-gradient-to-r from-pink-500 to-orange-300 text-white hover:scale-[1.02]"
+                                        : "border border-gray-200 text-[#020826] bg-white hover:bg-gray-50"
                                     }
                 `}
                             >

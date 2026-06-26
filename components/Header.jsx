@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import AuthModal from "./AuthModal";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
@@ -51,33 +52,37 @@ const loadUser = async () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
+    <header className="sticky top-0 z-50 bg-[#0B1326] border-b border-[#414751]/30">
+      <div className="max-w-[1280px] mx-auto h-20 px-12 flex items-center justify-between">
 
         {/* Logo */}
         <div className="flex items-center gap-3 cursor-pointer" onClick={() => {
             router.push('/')
         }}>
-          <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-pink-500 to-orange-300 flex items-center justify-center text-white font-bold text-2xl">
-            K
-          </div>
-
-          <h1 className="text-xl md:text-2xl font-bold text-slate-900">
-            Krack-AI
-          </h1>
+          <Image
+          src="/logo.png"
+          alt="Krack AI"
+          width={74}
+          height={80}
+          className="object-contain"
+         />
+         
         </div>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex items-center gap-10 text-slate-600">
-        <span className="cursor-pointer" onClick={() => router.push('/#features')}>Features</span>
-            <span className="cursor-pointer" onClick={() => router.push('/#reviews')}>Reviews</span>
-            <span className="cursor-pointer" onClick={() => router.push('/#privacy')}>Privacy</span>
-            <span className="cursor-pointer" onClick={() => router.push('/#pricing')}>Pricing</span>
-            <span className="cursor-pointer" onClick={() => {
-                router.push('/referral-program')
-                }}>Referral Program</span>
+        <nav className="hidden md:flex items-center gap-6 text-white text-sm">
+        <span className="cursor-pointer text-[16px] font-medium text-[#3B82F6] border-b-2 border-[#3B82F6] pb-1" onClick={() => router.push('/#features')}>Features</span>
+            <span className="cursor-pointer text-[16px] font-medium text-[#C1C7D3]" onClick={() => router.push('/#reviews')}>How it Works</span>
+            <span className="cursor-pointer text-[16px] font-medium text-[#C1C7D3]" onClick={() => router.push('/#privacy')}>Privacy</span>
+            <span className="cursor-pointer text-[16px] font-medium text-[#C1C7D3]" onClick={() => router.push('/#pricing')}>Pricing</span>
+            <span className="cursor-pointer text-[16px] font-medium text-[#C1C7D3]" onClick={() => {router.push('/referral-program')}}>Referral </span>
 
-          <Link className="cursor-pointer" href="/download">Download</Link>
+          <Link
+          href="/download"
+          className="cursor-pointer text-[16px] font-semibold bg-gradient-to-r from-[#3B82F6] via-[#6366F1] to-[#4EDEA3] bg-clip-text text-transparent"
+          >
+            Download
+          </Link>
 
 
         </nav>
@@ -97,8 +102,8 @@ const loadUser = async () => {
         text-white
         font-bold
         bg-gradient-to-r
-        from-pink-500
-        to-orange-300
+        from-[#3882F6]
+        to-[#40DEA3]
         flex
         items-center
         justify-center
@@ -131,21 +136,28 @@ const loadUser = async () => {
     )}
   </div>
 ) : (
-  <button
-    onClick={() => setShowAuthModal(true)}
-    className="
-      hidden md:block
-      px-8 py-3
-      rounded-full
-      text-white
-      font-semibold
-      bg-gradient-to-r
-      from-pink-500
-      to-orange-300
-    "
-  >
-    Sign In
-  </button>
+  <div className="hidden md:flex items-center gap-6">
+    <span 
+      className="cursor-pointer text-[#C1C7D3] font-medium hover:text-white transition"
+      onClick={() => setShowAuthModal(true)}
+    >
+      Login
+    </span>
+    <button
+      onClick={() => setShowAuthModal(true)}
+      className="
+        px-8 py-3
+        rounded-full
+        text-white
+        font-semibold
+        bg-gradient-to-r
+        from-[#3882F6]
+        to-[#40DEA3]
+      "
+    >
+      Get Started
+    </button>
+  </div>
 )}
 
         {/* Mobile Menu Button */}
@@ -210,12 +222,15 @@ const loadUser = async () => {
       rounded-full
       text-white
       font-semibold
+    
       bg-gradient-to-r
-      from-pink-500
-      to-orange-300
-    "
+      from-[#3882F6]
+      to-[#40DEA3]
+      "
+
+    
   >
-    Sign In
+    Get Started
   </button>
 )}
 
@@ -229,4 +244,4 @@ const loadUser = async () => {
         />
     </header>
   );
-}
+}      
